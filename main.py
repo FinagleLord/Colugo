@@ -40,7 +40,7 @@ interval = ''
 strat = ''
 output = 'Colugo:'+''
 inputs_done = False
-
+in_position = False
 
 def Get_user_inputs():
     global HEADER, strat, inputs_done, STRAT_LIST
@@ -82,7 +82,7 @@ last_close  = 0
 
 
 def Main():
-    global pair, HEADER, interval, last_rsi, last_rsiema
+    global pair, HEADER, interval, last_rsi, last_rsiema, in_position
     """Convert Binance api output into data usable by Python """
     binance_client = Client(config.binance_api_key, config.binance_secret_key)
     binance_data   = binance_client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE)
@@ -177,7 +177,7 @@ def Main():
         ema_emoji_signal = '🟥'
 
             
-    INFO_TABLE = f"""In Trade:{bg.red}False{ac.clear}     Pair:{pair} Strat:{strat} Quantity:{asset_qauntity} {fg.Bwhite}
+    INFO_TABLE = f"""In Trade:{bg.red}{in_position}{ac.clear}     Pair:{pair} Strat:{strat} Quantity:{asset_qauntity} {fg.Bwhite}
     LAST:{ac.clear}
         Open   - {open_updown_color}{last_open}{ac.clear}
         Close  - {close_updown_color}{last_close}{ac.clear}
@@ -204,7 +204,7 @@ INDICATORS:{ac.clear}
     print(table.table)
 
 
-in_position=False
+
 
 
 
