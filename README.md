@@ -23,3 +23,6 @@ replace **"PATH_TO_COLUGO"** with the path to main.py, going forward you can jus
 	
 ## License
 [MIT](http://opensource.org/licenses/mit-license.php)
+
+## Donation Address
+ETH - 0xe723FC5DB87bf6B33346fB9a87B8c107EECa6E7C
