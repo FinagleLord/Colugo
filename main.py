@@ -225,7 +225,9 @@ def RSIemaCross():
             output = f"According to the {strat}, it\'s time to sell\n Sending a SELL order!"
             order_succeeded = Order(SIDE_SELL, asset_qauntity, pair)
             if order_succeeded:
+                time.sleep(3600)
                 in_position = False
+
 
 
 
@@ -244,6 +246,7 @@ def GoldenCross():
             output = f"According to the {strat}, it\'s time to sell\n Sending a SELL order!"
             order_succeeded = Order(SIDE_SELL, asset_qauntity, pair)
             if order_succeeded:
+                time.sleep(3600)
                 in_position = False
 
 
