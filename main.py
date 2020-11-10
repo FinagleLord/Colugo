@@ -221,7 +221,7 @@ def RSIemaCross():
                 order_succeeded = Order(SIDE_BUY, asset_qauntity, pair)
                 if order_succeeded:
                     in_position = True
-        elif in_position:
+        elif in_position and last_rsi < last_rsiema or last_rsi < 50:
             output = f"According to the {strat}, it\'s time to sell\n Sending a SELL order!"
             order_succeeded = Order(SIDE_SELL, asset_qauntity, pair)
             if order_succeeded:
@@ -240,7 +240,7 @@ def GoldenCross():
                 order_succeeded = Order(SIDE_BUY, asset_qauntity, pair)
                 if order_succeeded:
                     in_position = True
-        elif in_position:
+        elif in_position and last_close < last_ema22 or last_close < last_ema50 or last_close > last_ema200:
             output = f"According to the {strat}, it\'s time to sell\n Sending a SELL order!"
             order_succeeded = Order(SIDE_SELL, asset_qauntity, pair)
             if order_succeeded:
