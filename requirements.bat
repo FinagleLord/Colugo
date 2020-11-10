@@ -4,3 +4,4 @@ pip install numpy
 pip install binance 
 pip install datetime 
 pip install csv
+pip install python-binance
